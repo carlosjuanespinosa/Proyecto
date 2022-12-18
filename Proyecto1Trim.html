@@ -1,0 +1,146 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://rawgit.com/wmurphyrd/aframe-super-hands-component/master/dist/super-hands.js"></script>
+    <script src="Json/Piezas.js"></script>
+    <script src="Json/imagenes.js"></script>
+
+</head>
+<body>
+    <script>
+    function canviaCamera(idCamera){
+       
+        document.querySelector(idCamera).setAttribute('camera', 'active', true);
+          }
+
+
+        AFRAME.registerComponent("camarajuego", {
+  
+            init: function() {
+  
+                this.el.addEventListener("click", function(e) {
+                    canviaCamera('#ca2');
+                });
+                this.el.addEventListener("mouseenter", function(e){
+                    
+                })
+  
+            }
+            
+  
+        });
+        AFRAME.registerComponent("camaracasa", {
+  
+  init: function() {
+
+      this.el.addEventListener("click", function(e) {
+          canviaCamera('#ca1');
+      });
+    }
+    });
+
+
+    </script>
+     
+<a-scene imagenes="info:Json/Puzzle.json">
+    
+    <a-assets>
+        <img id="cielo" src="Imagenes/cielo.jpg"></img>
+        <img id="suelo" src="Imagenes/hierba.jpg"></img>
+        <img id="P1" src="Imagenes/Pieza1.png">
+        <a-asset-item id="mesa-obj" src="Objetos/mesa/Magis_XZ3_200_mat(1).obj"></a-asset-item>
+    <a-asset-item id="mesa-mtl" src="Objetos/mesa/Magis_XZ3_200_mat(1).mtl"></a-asset-item>
+    <a-asset-item id="ventana-obj" src="Objetos/ventana/window_big_obj/window_big.obj"></a-asset-item>
+    <a-asset-item id="ventana-mtl" src="Objetos/ventana/window_big_obj/window_big.mtl"></a-asset-item>
+
+    </a-assets>
+    
+
+ <!-- Exterior casa-->
+ <a-sky id="cielo" src="#cielo" theta-length="90" radius="60"></a-sky>
+ <a-circle position="0 0 0" color="green" radius="60" rotation="-90 0 0" fog="false"></a-circle>
+<a-box scale="1 5 10" position="14.5 2.5 -10" color="red"></a-box>
+<a-box scale="1 1 7" position="14.5 0.5 -1.50" color="red"></a-box>
+<a-box scale="1 1 7" position="14.5 4.5 -1.50" color="red"></a-box>
+<a-box scale="1 5 10" position="14.5 2.5 7" color="red"></a-box>
+<!--Interior casa-->
+<a-obj-model src="#ventana-obj" mtl="#ventana-mtl" position="14.5 1 -1.5" rotation="0 0 0" scale="1 1.5 1.4" ></a-obj-model>
+
+<a-obj-model camarajuego src="#mesa-obj" mtl="#mesa-mtl" position="5 0 -1" rotation="-90 0 0" scale="0.0300 0.0270 0.0170" ></a-obj-model>
+
+
+
+<!--Juego-->
+<a-box camaracasa id="casa" scale="0.25 0.25 0.25" color="green" position="5 1.26 0"></a-box>
+<a-entity cursor="rayOrigin:mouse">
+<a-plane  id="panelPuzzle" position="5.020 1.26 -1.5" rotation="-90 0 0" scale="2 2.5 0" color="brown"></a-plane>
+</a-entity>
+<a-plane id="imagenPuzle "position="4.5 1.361 0.90" rotation="-90 -90 0" scale="0.5 0.5 0" src="Imagenes/capibaraPuzle.png"></a-plane>
+
+<a-box position="4.5 1.31 0.9" scale="0.5 0.1 0.5" color="Black"></a-box>
+<!--Piezas-->
+<a-entity id="piezas"></a-entity>
+<!-- DESTÍ-->
+<a-plane id="final1"  position="5.682 1.271 -2.346 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final2"  position="5.346 1.271 -2.347 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final3"  position="5.013 1.272 -2.345 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final4"  position="4.730 1.273 -2.391 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final5"  position="4.396 1.274 -2.388 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final6"  position="5.683 1.271 -1.984 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final7"  position="5.349 1.272 -1.982 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final8"  position="5.022 1.273 -2.026 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final9"  position="4.732 1.274 -2.022 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final10"  position="4.298 1.275 -2.024 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final11"  position="5.639 1.272 -1.664 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final12"  position="5.355 1.273 -1.662 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final13"  position="5.025 1.274 -1.708 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final14"  position="4.658 1.275 -1.666 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final15"  position="4.368 1.276 -1.621 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final16"  position="5.645 1.273 -1.312 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final17"  position="5.354 1.274 -1.350 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final18"  position="5.062 1.275 -1.348 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final19"  position="4.693 1.276 -1.311 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final20"  position="4.369 1.277 -1.264 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final21"  position="5.647 1.274 -0.965 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final22"  position="5.309 1.275 -0.996 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final23"  position="4.984 1.276 -0.996 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final24"  position="4.657 1.277 -0.911 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final25"  position="4.369 1.278 -0.953 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final26"  position="5.645 1.275 -0.650 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final27"  position="5.354 1.276 -0.643 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final28"  position="5.017 1.277 -0.644 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final29"  position="4.650 1.278 -0.600 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+<a-plane id="final30"  position="4.370 1.279 -0.640 " rotation="-90 -90 0"  color="brown" scale="0.5 0.5"></a-plane>
+
+
+ MANS
+<a-entity>
+    <a-camera></a-camera>
+    <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+    <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+  </a-entity>
+
+
+<!-- Camera 1P-->
+<a-entity id="neutra" position="0 1.6 0">
+    <a-camera id="ca1" active="true"></a-camera>
+</a-entity>
+
+<!-- Camera Superior-->
+<a-entity camera id="ca2" position="5 3 -1" rotation="-90 -90 0" >
+ 
+</a-entity>
+</a-scene>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const piezas = document.querySelector('#piezas');
+
+        piezas.setAttribute('piezas', 'info:Json/Puzzle.json');
+
+    });
+</script>
+
+</html>
