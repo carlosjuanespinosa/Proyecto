@@ -44,8 +44,8 @@ AFRAME.registerComponent('piezas', {
             entity.setAttribute('grabbable');
             entity.setAttribute('stretchable');
             entity.setAttribute('draggable');
-            entity.setAttribute('droppable');
-            entity.setAttribute('final'+a);
+            entity.setAttribute('dropppable');
+            entity.setAttribute('pegamento','target:#final'+a+'; distancia:1');
             piezas.appendChild(entity);
             i = i + 0.005;
             a++;

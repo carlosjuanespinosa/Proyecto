@@ -2,7 +2,7 @@ AFRAME.registerComponent('pegamento', {
 
     schema: {
       target: {type: 'selector'},
-      distancia: {type: 'number', default: 1.0 },
+      distancia: {type: 'number', default: 0.5 },
     },
 
     init: function () {
