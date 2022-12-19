@@ -2,7 +2,7 @@ AFRAME.registerComponent('pegamento', {
 
     schema: {
       target: {type: 'selector'},
-      distancia: {type: 'number', default: 0.5 },
+      distancia: {type: 'number', default: 0.1 },
     },
 
     init: function () {
@@ -10,7 +10,8 @@ AFRAME.registerComponent('pegamento', {
     },
 
     tick: function (time, timeDelta) {
-
+      if(!this.data?.target?.object3D)
+      return
       let distancia = this.el.object3D.position.distanceTo(this.data.target.object3D.position);
 
       if(distancia<=this.data.distancia){
