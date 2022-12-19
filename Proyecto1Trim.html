@@ -24,9 +24,6 @@
                 this.el.addEventListener("click", function(e) {
                     canviaCamera('#ca2');
                 });
-                this.el.addEventListener("mouseenter", function(e){
-                    
-                })
   
             }
             
@@ -50,7 +47,7 @@
     <a-assets>
         <img id="cielo" src="Imagenes/cielo.jpg"></img>
         <img id="suelo" src="Imagenes/hierba.jpg"></img>
-        <img id="P1" src="Imagenes/Pieza1.png">
+        <img id="cuadro" src="Imagenes/casa.png">
         <a-asset-item id="mesa-obj" src="Objetos/mesa/Magis_XZ3_200_mat(1).obj"></a-asset-item>
     <a-asset-item id="mesa-mtl" src="Objetos/mesa/Magis_XZ3_200_mat(1).mtl"></a-asset-item>
     <a-asset-item id="ventana-obj" src="Objetos/ventana/window_big_obj/window_big.obj"></a-asset-item>
@@ -63,19 +60,37 @@
  <a-sky id="cielo" src="#cielo" theta-length="90" radius="60"></a-sky>
  <a-circle position="0 0 0" color="green" radius="60" rotation="-90 0 0" fog="false"></a-circle>
  <!--casa-->
-<a-box scale="1 5 10" position="14.5 2.5 -10" color="red"></a-box>
-<a-box scale="1 1 7" position="14.5 0.5 -1.50" color="red"></a-box>
-<a-box scale="1 1 7" position="14.5 4.5 -1.50" color="red"></a-box>
-<a-box scale="1 5 10" position="14.5 2.5 7" color="red"></a-box>
+<a-box scale="1 5 10" position="14.5 2.5 -10" color="purple"></a-box>
+<a-box scale="1 1 7" position="14.5 0.5 -1.50" color="purple"></a-box>
+<a-box scale="1 1 7" position="14.5 4.5 -1.50" color="purple"></a-box>
+<a-box scale="1 5 10" position="14.5 2.5 7" color="purple"></a-box>
+
+<a-box scale="1 5 10" position="9.050 2.5 -14.5"  rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 1 7" position="0.589 4.5 -14.5" rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 1 7" position="0.589 0.5 -14.50" rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 5 10" position="-7.86 2.5 -14.5" color="purple" rotation="0 90 0"></a-box>
+
+<a-box scale="1 5 10" position="9.050 2.5 11.5"  rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 1 7" position="0.589 4.5 11.5" rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 1 7" position="0.589 0.5 11.50" rotation="0 90 0" color="purple"></a-box>
+<a-box scale="1 5 10" position="-7.86 2.5 11.5" color="purple" rotation="0 90 0"></a-box>
+
+<a-box scale="1 5 10" position="-13.2 2.5 -10" color="purple"></a-box>
+<a-box scale="1 1 7" position="-13.2 4.5 -1.50" color="purple"></a-box>
+<a-box scale="1 5 10" position="-13.2 2.5 7" color="purple"></a-box>
+
+<a-box scale="28.75 0.5 27" position="0.635 5.25 -1.507" color="pink"></a-box>
 <!--Interior casa-->
 <a-obj-model src="#ventana-obj" mtl="#ventana-mtl" position="14.5 1 -1.5" rotation="0 0 0" scale="1 1.5 1.4" ></a-obj-model>
+<a-obj-model src="#ventana-obj" mtl="#ventana-mtl" position="0.589 1 -14.5" rotation="0 90 0" scale="1 1.5 1.4" ></a-obj-model>
+<a-obj-model src="#ventana-obj" mtl="#ventana-mtl" position="0.589  1 11.5" rotation="0 90 0" scale="1 1.5 1.4" ></a-obj-model>
 
 <a-obj-model camarajuego src="#mesa-obj" mtl="#mesa-mtl" position="5 0 -1" rotation="-90 0 0" scale="0.0300 0.0270 0.0170" ></a-obj-model>
 
 
 
 <!--Juego-->
-<a-box camaracasa id="casa" scale="0.25 0.25 0.25" color="green" position="5 1.26 0"></a-box>
+<a-box camaracasa id="casa" scale="0.250 0.05 0.5" src="#cuadro" position="5.8 1.27 0" rotation="0 -90 0"></a-box>
 <a-entity cursor="rayOrigin:mouse">
 <a-plane  id="panelPuzzle" position="5.020 1.26 -1.5" rotation="-90 0 0" scale="2 2.5 0" color="brown"></a-plane>
 </a-entity>
